@@ -6,10 +6,10 @@ fake = Faker()
 #doesn't repeat values
 fake.unique;
 
-# Generate a dataset
-num_employees = 100
+# Generate a dataset of size max_num
+max_num = 100
 data = []
-for _ in range(num_employees):
+for _ in range(max_num):
     #modify the following fields for the schema you want your fake dataset to have
     data.append({
         'employee_id': fake.random_int( min= 1, max= num_employees),
