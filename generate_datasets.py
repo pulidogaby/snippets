@@ -3,8 +3,8 @@ import pandas as pd
 import pyarrow
 
 fake = Faker()
-#doesn't repeat values
-fake.unique;
+#use .unique to avoid duplicate values
+#fake.unique;
 
 # Generate a dataset of size max_num
 max_num = 100
@@ -12,7 +12,7 @@ data = []
 for _ in range(max_num):
     #modify the following fields for the schema you want your fake dataset to have
     data.append({
-        'employee_id': fake.random_int( min= 1, max= num_employees),
+        'employee_id': fake.unique.random_int( min= 1, max= num_employees),
         'first_name': fake.first_name(),
         'last_name': fake.last_name(),
         'email': fake.email(),
